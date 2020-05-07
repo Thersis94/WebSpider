@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /****************************************************************************
  * <b>Title</b>: Spider.java <b>Project</b>: WebSpider <b>Description: </b>
@@ -22,7 +23,7 @@ public class Spider {
 	private Object inputLine = null;
 	private static String readStatus = "closed";
 	private String site;
-	private ArrayList<String> siteLinks = new ArrayList<>();
+	private List<String> siteLinks = new ArrayList<>();
 
 	Spider(String site) throws MalformedURLException {
 		this.site = site;
@@ -39,7 +40,7 @@ public class Spider {
 	 * @return an arrayList of possible siteLinks
 	 * @throws IOException If there is an exception throws it out of the method.
 	 */
-	public ArrayList<String> scanSite(String page) throws IOException {
+	public List<String> scanSite(String page) throws IOException {
 
 		// Adds the current page to the list of siteLinks
 		siteLinks.add(page);
@@ -88,7 +89,7 @@ public class Spider {
 		}
 		// Close the Stream
 		in.close();
-		return (ArrayList<String>) siteLinks;
+		return siteLinks;
 	}
 
 	/**
