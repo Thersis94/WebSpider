@@ -21,7 +21,7 @@ import java.util.List;
 public class Spider {
 
 	private Object inputLine = null;
-	private static String readStatus = "closed";
+	private String readStatus = "closed";
 	private String site;
 	private List<String> siteLinks = new ArrayList<>();
 
